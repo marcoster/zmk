@@ -1,0 +1,12 @@
+identifier: mask
+name: mask
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+supported:
+  - usb_device
+  - usb_cdc
+  - pwm
+  - watchdog
