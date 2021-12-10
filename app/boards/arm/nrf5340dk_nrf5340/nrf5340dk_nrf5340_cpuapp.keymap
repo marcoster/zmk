@@ -22,11 +22,11 @@
 // |  CTL  |  WIN  |  ALT  |            SPACE              |  ALT  |  WIN  |  MO(1) |  CTL  |
 // ------------------------------------------------------------------------------------------
 			bindings = <
-	&gresc    &kp GRAVE &kp N1    &kp N2    &kp N3   &kp N4   &kp N5
-	&kp TAB   &kp TAB   &kp Q     &kp W     &kp E    &kp R    &kp T
-	&kp CLCK  &kp CLCK  &kp A     &kp S     &kp D    &kp F    &kp G
-	&kp LSHFT &kp LSHFT &kp Z     &kp X     &kp C    &kp V    &kp B
-	&kp LCTRL &kp LGUI  &kp LALT  &kp SPACE &kp RALT &kp RGUI &mo 1
+	&gresc    &kp GRAVE &kp N1    &kp N2  &kp N3   &kp N4   &kp N5
+	&kp TAB   &kp TAB   &kp Q     &kp W   &kp E    &kp R    &kp T
+	&kp CLCK  &kp CLCK  &kp A     &kp S   &kp D    &kp F    &kp G
+	&kp LSHFT &kp LSHFT &kp Z     &kp X   &kp C    &kp V    &kp B
+	&kp LCTRL &kp LGUI  &kp SPACE &mo 1   &kp LALT &kp LGUI &kp LCTRL
 			>;
 		};
 	};
