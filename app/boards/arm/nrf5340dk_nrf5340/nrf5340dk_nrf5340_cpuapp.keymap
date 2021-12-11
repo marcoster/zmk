@@ -15,6 +15,23 @@
 		
 		default_layer {
 // -------------------------------------------
+// | ESC  |  `   |  1    |  2   |  3    |  4   |  5   ||
+// | TAB  | TAB  |  Q    |  W   |  E    |  R   |  T   ||
+// | CAPS | CAPS |  A    |  S   |  D    |  F   |  G   ||
+// | SHIFT| SHIFT|  Z    |  X   |  C    |  V   |  B   ||
+// | CTRL | ALT  |  WIN  | MOD  | SPACE | CTRL | BSPC ||
+// ---------------------------------------------------||--------
+			bindings = <
+	&gresc      &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS   &kp EQUAL 
+	&kp TAB     &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp LBKT    &kp RBKT 
+	&kp CLCK    &kp CLCK    &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT     &kp ENTER 
+	&kp LSHFT   &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT   &kp RSHFT 
+    &kp LCTRL   &kp LALT    &kp LGUI    &mo 1       &kp SPACE   &kp LCTRL   &kp BSPC    &kp DEL     &kp RCTRL   &kp ENTER   &mo 1       &kp RGUI    &kp RALT    &kp RCTRL 
+            >;
+		};
+
+        lower_layer {
+// -------------------------------------------
 // | ESC  |  `   |  1  |  2  |  3  |  4  |  5  |
 // | TAB  | TAB  |  Q  |  W  |  E  |  R  |  T  |
 // | CAPS | CAPS |  A  |  S  |  D  |  F  |  G  |
@@ -22,12 +39,13 @@
 // |  CTL  |  WIN  |  ALT  |            SPACE              |  ALT  |  WIN  |  MO(1) |  CTL  |
 // ------------------------------------------------------------------------------------------
 			bindings = <
-	&gresc    &kp GRAVE &kp N1    &kp N2  &kp N3   &kp N4   &kp N5
-	&kp TAB   &kp TAB   &kp Q     &kp W   &kp E    &kp R    &kp T
-	&kp CLCK  &kp CLCK  &kp A     &kp S   &kp D    &kp F    &kp G
-	&kp LSHFT &kp LSHFT &kp Z     &kp X   &kp C    &kp V    &kp B
-	&kp LCTRL &kp LGUI  &kp SPACE &mo 1   &kp LALT &kp LGUI &kp LCTRL
+	&gresc      &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS   &kp EQUAL
+	&kp TAB     &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp LBKT    &kp RBKT
+	&kp CLCK    &kp CLCK    &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT     &kp ENTER
+	&kp LSHFT   &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT   &kp RSHFT
+	&kp LCTRL   &kp LALT    &kp LGUI    &trans      &kp SPACE   &kp LCTRL   &kp BSPC    &kp DEL     &kp RCTRL   &kp ENTER   &trans      &kp RGUI    &kp RALT    &kp RCTRL
 			>;
 		};
+
 	};
 };
