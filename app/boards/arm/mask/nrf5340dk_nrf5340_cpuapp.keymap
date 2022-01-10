@@ -22,8 +22,8 @@
 // |                           unused \\  WIN  | SPACE| MOD 1 || MOD 1| SPACE | ALT // unused
 // ---------------------------------------------------||--------
 			bindings = <
-	&gresc      &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                              &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS   &kp EQUAL
-	&kp TAB     &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T                               &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSPC    &kp BSPC 
+	&gresc      &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6                              &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS   &kp EQUAL   &kp GRAVE
+	&kp TAB     &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T                               &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSPC    &kp BSPC
 	&kp LSHFT   &kp LSHFT   &kp A       &kp S       &kp D       &kp F       &kp G       &kp BSPC    &kp DEL     &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp ENTER   &kp ENTER 
 	&kp LCTRL   &kp LCTRL   &kp Z       &kp X       &kp C       &kp V       &kp B       &kp LCTRL   &kp RCTRL   &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT   &kp RSHFT 
                                         &kp LCTRL   &kp LALT    &kp LGUI    &kp SPACE   &mo 1       &mo 1       &kp SPACE   &kp RALT    &kp RGUI    &kp RCTRL 
