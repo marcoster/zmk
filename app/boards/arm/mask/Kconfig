@@ -39,7 +39,7 @@ config IPM_MSG_CH_1_RX
 
 endif # RPMSG_SERVICE_DUAL_IPM_SUPPORT
 
-if BOARD_NRF5340PDK_NRF5340_CPUAPP || BOARD_NRF5340PDK_NRF5340_CPUAPPNS || BOARD_NRF5340DK_NRF5340_CPUAPP || BOARD_NRF5340DK_NRF5340_CPUAPPNS
+if BOARD_NRF5340PDK_NRF5340_CPUAPP || BOARD_NRF5340PDK_NRF5340_CPUAPPNS || BOARD_NRF5340DK_NRF5340_CPUAPP || BOARD_NRF5340DK_NRF5340_CPUAPPNS || BOARD_MASK_LEFT || BOARD_MASK_RIGHT
 
 config BOARD_ENABLE_DCDC_APP
 	bool "Enable Application MCU DCDC converter"
@@ -107,6 +107,8 @@ config DOMAIN_CPUAPP_BOARD
 	string
 	default "nrf5340pdk_nrf5340_cpuapp" if BOARD_NRF5340PDK_NRF5340_CPUNET
 	default "nrf5340dk_nrf5340_cpuapp" if BOARD_NRF5340DK_NRF5340_CPUNET
+    default "mask_left" if BOARD_MASK_LEFT
+    default "mask_right" if BOARD_MASK_RIGHT
 	help
 	  The board which will be used for CPUAPP domain when creating a multi
 	  image application where one or more images should be located on
