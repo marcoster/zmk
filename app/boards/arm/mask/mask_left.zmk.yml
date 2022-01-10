@@ -1,0 +1,10 @@
+file_format: "1"
+id: mask_left
+name: mask_left
+type: board
+arch: arm
+features:
+  - keys
+outputs:
+  - usb
+url: https://github.com/marcoster/mask

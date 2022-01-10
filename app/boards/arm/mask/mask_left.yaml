@@ -1,0 +1,17 @@
+identifier: mask_left
+name: MASK-LEFT-NRF5340-CPUAPP
+type: mcu
+arch: arm
+toolchain:
+  - gnuarmemb
+  - xtools
+  - zephyr
+ram: 448
+flash: 1024
+supported:
+  - gpio
+  - i2c
+  - pwm
+  - watchdog
+  - usb_cdc
+  - usb_device
