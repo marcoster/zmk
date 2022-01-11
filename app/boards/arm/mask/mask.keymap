@@ -40,9 +40,9 @@
 // ------------------------------------------------------------------------------------------
 			bindings = <
 	&gresc      &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6                              &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12     &kp GRAVE
-	&kp TAB     &kp TAB     &kp X       &kp X       &kp X       &kp X       &kp X                               &trans      &kp U       &kp UP      &kp O       &trans      &kp DEL     &kp DEL
+	&kp TAB     &kp TAB     &kp X       &kp X       &kp X       &kp X       &kp X                               &kp PIPE    &kp LBRC    &kp UP      &kp RBRC    &kp TILDE   &kp DEL     &kp DEL
 	&kp CAPS    &kp CAPS    &kp A       &kp S       &kp X       &kp X       &kp X       &kp HOME    &kp PG_UP   &kp SQT     &kp LEFT    &kp DOWN    &kp RIGHT   &kp SQT     &kp ENTER   &kp ENTER
-	&kp LCTRL   &kp LCTRL   &kp X       &kp X       &kp X       &kp X       &kp X       &kp END     &kp PG_DN   &trans      &kp LBKT    &kp RBKT    &trans      &kp BSLH    &kp RSHFT   &kp RSHFT
+	&kp LCTRL   &kp LCTRL   &kp X       &kp X       &kp X       &kp X       &kp X       &kp END     &kp PG_DN   &kp DQT     &kp LBKT    &kp QMARK   &kp RBKT    &kp BSLH    &kp RSHFT   &kp RSHFT
 	                                    &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
 			>;
 		};
