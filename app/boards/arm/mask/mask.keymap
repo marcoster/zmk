@@ -10,14 +10,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define BASE 0
-#define NAV 1
-#define MOUSE 2
-#define MEDIA 3
-#define NUM 4
-#define SYM 5
-#define FUN 6
-#define ADJ 7
 
 / {
 
@@ -37,8 +29,87 @@
 
     keymap {
         compatible = "zmk,keymap";
+
+//########################################################################################################################################################################################################//
+//  START OF NEW MASK LAYOUT
+//    template_layer {
+//        bindings = <
+//    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
+//    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
+//    &none      &none       &none       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none       &none       &none       &none
+//    &none      &none       &none       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none       &none       &none       &none
+//                                       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none
+//        >;
+//    };
+
+#define BASE    0
+#define NAV     1
+#define MEDIA   2
+#define NUM     3
+#define SYM     4
+
+    default_layer {
+            bindings = <
+    &none       &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none           &none       &none
+    &none       &kp ESC     &kp Q       &kp W       &kp E       &kp R           &kp T                                           &kp Y           &kp U           &kp I       &kp O       &kp P           &kp BSPC    &none
+    &none       &kp LCTRL   &kp A       &kp S       &kp D       &kp F           &kp G           &none           &none           &kp H           &kp J           &kp K       &kp L       &kp SEMI        &kp ENTER   &none
+    &none       &kp LSHFT   &kp Z       &kp X       &kp C       &kp V           &kp B           &none           &none           &kp N           &kp M           &kp COMMA   &kp DOT     &kp FSLH        &kp RSHFT   &none
+                                        &none       &none       &kp LGUI        &lt SYM SPACE   &lt NAV TAB     &lt MEDIA ESC   &lt NUM SPACE   &kp RALT        &none       &none
+            >;
+        };
+    nav_layer {
+        bindings = <
+    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
+    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &kp UP      &none       &none       &none       &none
+    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &none           &kp LEFT        &kp DOWN    &kp RIGHT   &none       &none       &none
+    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none       &none       &trans      &none
+                                       &none       &none       &trans          &none           &none           &none           &none           &trans          &none       &none
+        >;
+    };
+    media_layer {
+        bindings = <
+    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
+    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
+    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none       &none       &none       &none
+    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none       &none       &trans      &none
+                                       &none       &none       &trans          &none           &none           &none           &none           &trans          &none       &none
+        >;
+    };
+    num_layer {
+        bindings = <
+    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
+    &none      &none       &kp F1      &kp F2      &kp F3      &kp F4          &kp F5                                          &kp F6          &kp F7          &kp F8      &kp F9      &kp F10     &kp F11     &none
+    &none      &trans      &kp N1      &kp N2      &kp N3      &kp N4          &kp N5          &none           &none           &kp N6          &kp N7          &kp N8      &kp N9      &kp N0      &kp F12     &none
+    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none       &none       &trans      &none
+                                       &none       &none       &trans          &none           &none           &none           &none           &trans          &trans      &none
+        >;
+    };
+    sym_layer {
+        bindings = <
+    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
+    &none      &none       &none       &none       &none       &none           &none                                           &kp STAR        &kp LPAR        &kp RPAR    &kp UNDER   &kp PLUS    &kp CARET   &none
+    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &kp PIPE        &kp LBRC        &kp RBRC    &kp MINUS   &kp EQUAL   &kp HASH    &none
+    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &kp PRCNT       &kp LBKT        &kp RBKT    &kp AT      &kp BSLH    &trans      &none
+                                       &none       &none       &trans          &none           &none           &none           &none           &trans          &none       &none
+        >;
+    };
+
+
+
+// END OF NEW MASK LAYOUT
+//########################################################################################################################################################################################################//
+
 //########################################################################################################################################################################################################//
 //  START OF MIRYOKU LIKE LAYERS - based on https://github.com/pashutk/zmk-config/blob/master/config/corne.keymap
+/*
+#define BASE 0
+#define NAV 1
+#define MOUSE 2
+#define MEDIA 3
+#define NUM 4
+#define SYM 5
+#define FUN 6
+#define ADJ 7
 
     default_layer {
             bindings = <
@@ -120,6 +191,7 @@
                                         &none        &none           &none           &none           &none           &none           &none           &none           &none       &none
         >;
     };
+*/
 //  END OF MIRYOKU LIKE LAYERS
 //########################################################################################################################################################################################################//
 
