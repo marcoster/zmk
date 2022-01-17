@@ -13,20 +13,14 @@
 
 / {
 
-
-    behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <220>;
-            quick_tap_ms = <0>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-            
-        };
-    };
-
+    //conditional_layers {
+    //    compatible = "zmk,conditional-layers";
+    //    nav_layer {
+    //        if-layers = <1 2>;
+    //        then-layer = <3>;
+    //    };
+    //};
+    
     keymap {
         compatible = "zmk,keymap";
 
@@ -43,20 +37,39 @@
 //    };
 
 #define BASE    0
-#define NAV     1
-#define MEDIA   2
-#define NUM     3
-#define SYM     4
+#define NUM     1
+#define SYM     2
+#define NAV     3
+#define MEDIA   4
 
     default_layer {
             bindings = <
     &none       &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none      &none       &none
-    &none       &kp TAB     &kp Q       &kp W       &kp E       &kp R           &kp T                                           &kp Y           &kp U           &kp I       &kp O       &kp P      &kp BSPC    &none
-    &none       &kp LSHFT   &kp A       &kp S       &kp D       &kp F           &kp G           &none           &none           &kp H           &kp J           &kp K       &kp L       &kp SEMI   &kp SQT     &none
+    &kp ESC     &kp TAB     &kp Q       &kp W       &kp E       &kp R           &kp T                                           &kp Y           &kp U           &kp I       &kp O       &kp P      &kp BSPC    &none
+    &none       &kp LSHFT   &kp A       &kp S       &kp D       &kp F           &kp G           &none           &none           &kp H           &kp J           &kp K       &kp L       &kp SEMI   &kp SQT     &kp ENTER
     &none       &kp LCTRL   &kp Z       &kp X       &kp C       &kp V           &kp B           &none           &none           &kp N           &kp M           &kp COMMA   &kp DOT     &kp FSLH   &kp RSHFT   &none
-                                        &none       &none       &kp LGUI        &lt SYM SPACE   &lt NAV ESC     &lt MEDIA ENTER &lt NUM SPACE   &kp RALT        &none       &none
+                                        &kp LCTRL   &kp LCTRL   &kp LGUI        &kp SPACE       &lt SYM ENTER   &lt NUM ENTER   &kp SPACE       &kp RALT        &none       &none
             >;
         };
+
+    num_layer {
+        bindings = <
+    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
+    &none      &none       &kp F1      &kp F2      &kp F3      &kp F4          &kp F5                                          &kp F6          &kp F7          &kp F8      &kp F9      &kp F10     &kp F11     &none
+    &none      &trans      &kp N1      &kp N2      &kp N3      &kp N4          &kp N5          &none           &none           &kp N6          &kp N7          &kp N8      &kp N9      &kp N0      &kp F12     &none
+    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none       &none       &trans      &none
+                                       &none       &none       &trans          &none           &mo NAV         &none           &none           &trans          &trans      &none
+        >;
+    };
+    sym_layer {
+        bindings = <
+    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none        &none       &none       &none       &none
+    &none      &none       &kp GRAVE   &kp TILDE   &none       &none           &none                                           &kp PIPE        &kp LBKT        &kp RBKT     &kp MINUS   &kp UNDER   &kp EQUAL   &none
+    &none      &trans      &kp EXCL    &kp AT      &kp HASH    &kp DOLLAR      &kp PERCENT     &none           &none           &kp CARET       &kp AMPERSAND   &kp ASTERISK &kp LPAR    &kp RPAR    &kp PLUS    &none
+    &none      &trans      &none       &none       &none       &none           &kp SQT         &none           &none           &kp DQT         &kp LBRC        &kp RBRC     &none       &kp BSLH    &trans      &none
+                                       &none       &none       &trans          &none           &none           &mo NAV         &none           &trans          &none        &none
+        >;
+    };
     nav_layer {
         bindings = <
     &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
@@ -75,25 +88,6 @@
                                        &none       &none       &trans          &none           &none           &none           &none           &trans          &none       &none
         >;
     };
-    num_layer {
-        bindings = <
-    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
-    &none      &none       &kp F1      &kp F2      &kp F3      &kp F4          &kp F5                                          &kp F6          &kp F7          &kp F8      &kp F9      &kp F10     &kp F11     &none
-    &none      &trans      &kp N1      &kp N2      &kp N3      &kp N4          &kp N5          &none           &none           &kp N6          &kp N7          &kp N8      &kp N9      &kp N0      &kp F12     &none
-    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none       &none       &trans      &none
-                                       &none       &none       &trans          &none           &none           &none           &none           &trans          &trans      &none
-        >;
-    };
-    sym_layer {
-        bindings = <
-    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none        &none       &none       &none       &none
-    &none      &none       &kp GRAVE   &kp TILDE   &none       &none           &none                                           &kp PIPE        &kp LBKT        &kp RBKT     &kp MINUS   &kp UNDER   &kp EQUAL   &none
-    &none      &trans      &kp EXCL    &kp AT      &kp HASH    &kp DOLLAR      &kp PERCENT     &none           &none           &kp CARET       &kp AMPERSAND   &kp ASTERISK &kp LPAR    &kp RPAR    &kp PLUS    &none
-    &none      &trans      &none       &none       &none       &none           &kp SQT         &none           &none           &kp DQT         &kp LBRC        &kp RBRC     &none       &kp BSLH    &trans      &none
-                                       &none       &none       &trans          &none           &none           &none           &none           &trans          &none        &none
-        >;
-    };
-
 
 
 // END OF NEW MASK LAYOUT
@@ -102,6 +96,20 @@
 //########################################################################################################################################################################################################//
 //  START OF MIRYOKU LIKE LAYERS - based on https://github.com/pashutk/zmk-config/blob/master/config/corne.keymap
 /*
+
+    behaviors {
+            hm: homerow_mods {
+                compatible = "zmk,behavior-hold-tap";
+                label = "HOMEROW_MODS";
+                #binding-cells = <2>;
+                tapping-term-ms = <220>;
+                quick_tap_ms = <0>;
+                flavor = "balanced";
+                bindings = <&kp>, <&kp>;
+                
+            };
+        };
+
 #define BASE 0
 #define NAV 1
 #define MOUSE 2
