@@ -40,52 +40,42 @@
 #define NUM     1
 #define SYM     2
 #define NAV     3
-#define MEDIA   4
 
     default_layer {
             bindings = <
     &none       &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none      &none       &none
-    &none       &kp TAB     &kp Q       &kp W       &kp E       &kp R           &kp T                                           &kp Y           &kp U           &kp I       &kp O       &kp P      &kp BSPC    &none
-    &none       &kp LSHFT   &kp A       &kp S       &kp D       &kp F           &kp G           &none           &none           &kp H           &kp J           &kp K       &kp L       &kp SEMI   &kp SQT     &kp ENTER
+    &none       &kp ESC     &kp Q       &kp W       &kp E       &kp R           &kp T                                           &kp Y           &kp U           &kp I       &kp O       &kp P      &kp BSPC    &none
+    &none       &kp LSHFT   &kp A       &kp S       &kp D       &kp F           &kp G           &none           &none           &kp H           &kp J           &kp K       &kp L       &kp SEMI   &kp SQT     &none
     &none       &kp LCTRL   &kp Z       &kp X       &kp C       &kp V           &kp B           &none           &none           &kp N           &kp M           &kp COMMA   &kp DOT     &kp FSLH   &kp RSHFT   &none
-                                        &none       &none       &kp LGUI        &kp SPACE       &lt SYM ESC     &lt NUM ENTER   &kp SPACE       &kp RALT        &none       &none
+                                        &none       &none       &kp LGUI        &kp SPACE       &lt SYM TAB     &lt NUM ENTER   &kp SPACE       &kp RALT        &none       &none
             >;
         };
 
     num_layer {
         bindings = <
     &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
-    &none      &none       &kp F1      &kp F2      &kp F3      &kp F4          &kp F5                                          &kp F6          &kp F7          &kp F8      &kp F9      &kp F10     &kp F11     &none
-    &none      &trans      &kp N1      &kp N2      &kp N3      &kp N4          &kp N5          &none           &none           &kp N6          &kp N7          &kp N8      &kp N9      &kp N0      &kp F12     &none
-    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none       &none       &trans      &none
-                                       &none       &none       &trans          &none           &mo NAV         &none           &none           &trans          &trans      &none
+    &none      &none       &kp F1      &kp F2      &kp F3      &kp F4          &kp F5                                          &kp F6          &kp F7          &kp F8      &kp F9      &kp F10     &trans      &none
+    &none      &trans      &kp N1      &kp N2      &kp N3      &kp N4          &kp N5          &none           &none           &kp N6          &kp N7          &kp N8      &kp N9      &kp N0      &kp F11     &none
+    &none      &trans      &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)      &kp LG(N5)      &none           &none           &kp LG(N6)      &kp LG(N7)      &kp LG(N8)  &kp LG(N9)  &kp LG(N0)  &kp F12     &none
+                                       &none       &none       &trans          &trans          &mo NAV         &none           &trans          &trans          &none       &none
         >;
     };
     sym_layer {
         bindings = <
     &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none        &none       &none       &none       &none
-    &none      &none       &kp GRAVE   &kp TILDE   &none       &none           &none                                           &kp PIPE        &kp LBKT        &kp RBKT     &kp MINUS   &kp UNDER   &kp EQUAL   &none
-    &none      &trans      &kp EXCL    &kp AT      &kp HASH    &kp DOLLAR      &kp PERCENT     &none           &none           &kp CARET       &kp AMPERSAND   &kp ASTERISK &kp LPAR    &kp RPAR    &kp PLUS    &none
-    &none      &trans      &none       &none       &none       &none           &kp SQT         &none           &none           &kp DQT         &kp LBRC        &kp RBRC     &none       &kp BSLH    &trans      &none
-                                       &none       &none       &trans          &none           &none           &mo NAV         &none           &trans          &none        &none
+    &none      &none       &kp GRAVE   &kp TILDE   &none       &none           &none                                           &kp PIPE        &kp LBKT        &kp RBKT     &kp MINUS   &kp UNDER   &trans      &none
+    &none      &trans      &kp EXCL    &kp AT      &kp HASH    &kp DOLLAR      &kp PERCENT     &none           &none           &kp CARET       &kp AMPERSAND   &kp ASTERISK &kp LPAR    &kp RPAR    &kp EQUAL   &none
+    &none      &trans      &none       &none       &none       &none           &kp SQT         &none           &none           &kp DQT         &kp LBRC        &kp RBRC     &none       &kp BSLH    &kp PLUS    &none
+                                       &none       &none       &trans          &trans          &none           &mo NAV         &trans          &trans          &none        &none
         >;
     };
     nav_layer {
         bindings = <
-    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
-    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &kp UP      &none       &none       &none       &none
-    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &none           &kp LEFT        &kp DOWN    &kp RIGHT   &none       &none       &none
-    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none       &none       &trans      &none
-                                       &none       &none       &trans          &none           &none           &none           &none           &trans          &none       &none
-        >;
-    };
-    media_layer {
-        bindings = <
-    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
-    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
-    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none       &none       &none       &none
-    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none       &none       &trans      &none
-                                       &none       &none       &trans          &none           &none           &none           &none           &trans          &none       &none
+    &none      &none       &none            &none           &none           &none           &none                           &none           &none           &none           &none           &none           &none       &none
+    &none      &none       &none            &kp K_MUTE      &kp K_VOL_DN    &kp K_VOL_UP    &none                           &kp DEL         &kp INS         &kp UP          &kp PG_UP       &kp PG_DN       &trans      &none
+    &none      &trans      &none            &none           &none           &none           &none           &none   &none   &none           &kp LEFT        &kp DOWN        &kp RIGHT       &kp HOME        &kp END     &none
+    &none      &trans      &kp LG(LS(N1))   &kp LG(LS(N2))  &kp LG(LS(N3))  &kp LG(LS(N4))  &kp LG(LS(N5))  &none   &none   &kp LG(LS(N6))  &kp LG(LS(N7))  &kp LG(LS(N8))  &kp LG(LS(N9))  &kp LG(LS(N0))  &trans      &none
+                                            &none           &none           &trans          &trans          &none   &none   &none           &trans          &none           &none
         >;
     };
 
