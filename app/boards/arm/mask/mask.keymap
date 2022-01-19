@@ -24,8 +24,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-//########################################################################################################################################################################################################//
-//  START OF NEW MASK LAYOUT
 //    template_layer {
 //        bindings = <
 //    &none      &none       &none       &none       &none       &none           &none                                           &none           &none           &none       &none       &none       &none       &none
@@ -36,6 +34,58 @@
 //        >;
 //    };
 
+//########################################################################################################################################################################################################//
+//  START OF LAYOUT based on https://github.com/qmk/qmk_firmware/tree/master/keyboards/crkbd/keymaps/mcrown
+#define BASE    0
+#define LOWER   1
+#define RAISE   2
+#define ADJUST  3
+
+    default_layer {
+            bindings = <
+    &none       &kp ESC     &kp N1      &kp N2      &kp N3      &kp N4          &kp N5                                          &kp N6          &kp N7          &kp N8      &kp N9      &kp N0     &kp BSPC    &none
+    &none       &kp TAB     &kp Q       &kp W       &kp E       &kp R           &kp T                                           &kp Y           &kp U           &kp I       &kp O       &kp P      &kp ENTER   &none
+    &none       &kp LSHFT   &kp A       &kp S       &kp D       &kp F           &kp G           &none           &none           &kp H           &kp J           &kp K       &kp L       &kp SEMI   &kp SQT     &none
+    &none       &kp LCTRL   &kp Z       &kp X       &kp C       &kp V           &kp B           &none           &none           &kp N           &kp M           &kp COMMA   &kp DOT     &kp FSLH   &kp RSHFT   &none
+                                        &none       &none       &kp LGUI        &mo RAISE       &mo LOWER       &kp ENTER       &kp SPACE       &kp RALT        &none       &none
+            >;
+        };
+
+    lower_layer {
+        bindings = <
+    &trans     &none       &kp F1      &kp F2      &kp F3      &kp F4          &kp F5                                          &kp F6          &kp F7          &kp F8      &kp F9      &kp F10      &none       &none
+    &none      &kp CAPS    &none       &none       &none       &none           &none                                           &kp PG_UP       &kp DEL         &kp UP      &kp INS     &kp F11      &kp F12     &none
+    &none      &trans      &none       &none       &none       &kp PG_UP       &kp PG_DN       &none           &none           &kp PG_DN       &kp LEFT        &kp DOWN    &kp RIGHT   &kp HOME     &kp END     &none
+    &none      &trans      &none       &none       &none       &none           &none           &none           &none           &none           &none           &none       &none       &kp LG(HOME) &kp LG(END) &none
+                                       &none       &none       &trans          &mo ADJUST      &none           &trans          &trans          &trans          &none       &none
+        >;
+    };
+    raise_layer {
+        bindings = <
+    &trans     &none       &none        &none        &none       &none           &none                                           &none           &none           &none        &none       &none       &none       &none
+    &none      &trans      &none        &none        &none       &none           &none                                           &kp GRAVE       &kp EQUAL       &kp LPAR     &kp RPAR    &kp PIPE    &kp DEL     &none
+    &none      &trans      &kp K_MUTE   &kp K_VOL_UP &none       &none           &none           &none           &none           &kp MINUS       &kp LBRC        &kp LBKT     &kp RBKT    &kp RBRC    &kp GRAVE   &none
+    &none      &trans      &none        &kp K_VOL_DN &none       &none           &none           &none           &none           &kp UNDER       &kp PLUS        &none        &none       &kp BSLH    &kp TILDE   &none
+                                        &none        &none       &trans          &none           &mo ADJUST      &trans          &trans          &trans          &none        &none
+        >;
+    };
+    adjust_layer {
+        bindings = <
+    &trans     &none       &none            &none           &none           &none           &none                           &none           &none           &none           &none           &none           &none       &none
+    &none      &trans      &rgb_ug RGB_TOG  &kp K_MUTE      &kp K_VOL_DN    &kp K_VOL_UP    &none                           &kp DEL         &kp INS         &kp UP          &kp PG_UP       &kp PG_DN       &trans      &none
+    &none      &trans      &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_EFF &none   &none   &none           &kp LEFT        &kp DOWN        &kp RIGHT       &kp HOME        &kp END     &none
+    &none      &trans      &rgb_ug RGB_HUD  &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_EFR &none   &none   &kp LG(LS(N6))  &kp LG(LS(N7))  &kp LG(LS(N8))  &kp LG(LS(N9))  &kp LG(LS(N0))  &trans      &none
+                                            &none           &none           &trans          &none           &trans  &trans  &none           &trans          &none           &none
+        >;
+    };
+// END OF crkbd/mcrown layout
+//########################################################################################################################################################################################################//
+
+
+
+//########################################################################################################################################################################################################//
+//  START OF NEW MASK LAYOUT
+/*
 #define BASE    0
 #define NUM     1
 #define SYM     2
@@ -79,7 +129,7 @@
         >;
     };
 
-
+*/
 // END OF NEW MASK LAYOUT
 //########################################################################################################################################################################################################//
 
