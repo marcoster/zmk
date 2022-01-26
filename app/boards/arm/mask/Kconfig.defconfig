@@ -13,6 +13,8 @@ config ZMK_USB
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
     default y
 
+
+
 endif # BOARD_MASK_LEFT
 
 if BOARD_MASK_LEFT || BOARD_MASK_RIGHT
