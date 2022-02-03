@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: petejohanson
       url-base: https://github.com/petejohanson
+    - name: megamind4089
+      url-base: https://github.com/megamind4089
     - name: microsoft
       url-base: https://github.com/microsoft
   projects:
