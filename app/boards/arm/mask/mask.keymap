@@ -40,12 +40,13 @@
 #define LOWER   1
 #define RAISE   2
 #define ADJUST  3
+#define GAME    4
 
     default_layer {
             bindings = <
     &none       &kp ESC     &kp N1      &kp N2      &kp N3      &kp N4          &kp N5                                          &kp N6          &kp N7          &kp N8      &kp N9      &kp N0     &kp BSPC    &none
     &none       &kp TAB     &kp Q       &kp W       &kp E       &kp R           &kp T                                           &kp Y           &kp U           &kp I       &kp O       &kp P      &kp ENTER   &none
-    &none       &kp LSHFT   &kp A       &kp S       &kp D       &kp F           &kp G           &none           &none           &kp H           &kp J           &kp K       &kp L       &kp SEMI   &kp SQT     &none
+    &none       &kp LSHFT   &kp A       &kp S       &kp D       &kp F           &kp G           &none           &tog GAME       &kp H           &kp J           &kp K       &kp L       &kp SEMI   &kp SQT     &none
     &none       &kp LCTRL   &kp Z       &kp X       &kp C       &kp V           &kp B           &none           &none           &kp N           &kp M           &kp COMMA   &kp DOT     &kp FSLH   &kp RSHFT   &none
                                         &none       &none       &kp LGUI        &mo RAISE       &mo LOWER       &kp ENTER       &kp SPACE       &kp RALT        &none       &none
             >;
@@ -78,6 +79,17 @@
                                             &none           &none           &trans          &none           &trans  &trans  &none           &trans          &none           &none
         >;
     };
+    game_layer {
+            bindings = <
+    &none       &kp ESC     &kp N1      &kp N2      &kp N3      &kp N4          &kp N5                                          &kp N6          &kp N7          &kp N8      &kp N9      &kp N0     &kp BSPC    &none
+    &none       &kp TAB     &kp Q       &kp W       &kp E       &kp R           &kp T                                           &kp Y           &kp U           &kp I       &kp O       &kp P      &kp ENTER   &none
+    &none       &kp LSHFT   &kp A       &kp S       &kp D       &kp F           &kp G           &none           &tog GAME       &kp H           &kp J           &kp K       &kp L       &kp SEMI   &kp SQT     &none
+    &none       &kp LCTRL   &kp Z       &kp X       &kp C       &kp V           &kp B           &none           &none           &kp N           &kp M           &kp COMMA   &kp DOT     &kp FSLH   &kp RSHFT   &none
+                                        &none       &none       &kp LALT        &kp SPACE       &kp M           &mo LOWER       &mo RAISE       &kp RGUI        &none       &none
+            >;
+        };
+
+
 // END OF crkbd/mcrown layout
 //########################################################################################################################################################################################################//
 
