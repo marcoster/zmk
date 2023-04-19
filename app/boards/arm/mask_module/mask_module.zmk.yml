@@ -1,0 +1,10 @@
+file_format: "1"
+id: mask_module
+name: mask_module
+type: board
+arch: arm
+outputs:
+  - usb
+  - ble
+url: https://github.com/marcoster/mask
+exposes: [pro_micro]

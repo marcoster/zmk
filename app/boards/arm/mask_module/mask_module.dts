@@ -1,0 +1,19 @@
+/*
+ * Copyright (c) 2021 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/dts-v1/;
+#include "mask_module.dtsi"
+
+/ {
+	chosen {
+		zmk,battery = &vbatt;
+	};
+
+	vbatt: vbatt {
+		compatible = "zmk,battery-nrf-vddh";
+		label = "BATTERY";
+	};
+};
