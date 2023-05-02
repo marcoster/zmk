@@ -1,0 +1,13 @@
+file_format: "1"
+id: mask
+name: mask
+type: shield
+url: https://github.com/marcoster/mask
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+siblings:
+  - mask_left
+  - mask_right
