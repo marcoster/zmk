@@ -9,5 +9,5 @@ features:
   - keys
   - display
 siblings:
-  - mask_left
-  - mask_right
+  - mask_v1_left
+  - mask_v1_right

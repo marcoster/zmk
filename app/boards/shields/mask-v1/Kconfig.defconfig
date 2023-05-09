@@ -1,7 +1,7 @@
 # Copyright (c) 2020 Ryan Cross
 # SPDX-License-Identifier: MIT
 
-if SHIELD_MASK_LEFT
+if SHIELD_MASK_V1_LEFT
 
 config ZMK_KEYBOARD_NAME
 	default "mask"
@@ -11,7 +11,7 @@ config ZMK_SPLIT_ROLE_CENTRAL
 	
 endif
 
-if SHIELD_MASK_LEFT || SHIELD_MASK_RIGHT
+if SHIELD_MASK_V1_LEFT || SHIELD_MASK_V1_RIGHT
 
 config ZMK_SPLIT
 	default y

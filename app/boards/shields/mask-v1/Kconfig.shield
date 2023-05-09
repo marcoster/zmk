@@ -1,8 +1,8 @@
 # Copyright (c) 2020 Ryan Cross
 # SPDX-License-Identifier: MIT
 
-config SHIELD_MASK_LEFT
-	def_bool $(shields_list_contains,mask_left)
+config SHIELD_MASK_V1_LEFT
+	def_bool $(shields_list_contains,mask_v1_left)
 
-config SHIELD_MASK_RIGHT
-	def_bool $(shields_list_contains,mask_right)
+config SHIELD_MASK_V1_RIGHT
+	def_bool $(shields_list_contains,mask_v1_right)
