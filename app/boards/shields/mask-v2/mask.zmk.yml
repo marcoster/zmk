@@ -1,0 +1,12 @@
+file_format: "1"
+id: mask
+name: mask
+type: shield
+url: https://github.com/marcoster/mask
+requires: [pro_micro]
+exposes: []
+features:
+  - keys
+siblings:
+  - mask_v2_left
+  - mask_v2_right
