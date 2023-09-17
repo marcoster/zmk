@@ -24,6 +24,9 @@
 #define RAISE  2
 #define ADJUST 3
 
+#define KPMUL KP_MULTIPLY
+#define KPPLU KP_PLUS
+
 
 / {
     behaviors {
@@ -60,20 +63,20 @@
 label= "BASE"                                                  ;
 // └───────────────────────────────────────────────────────────┘
 /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │    Q    │    W    │    F    │    P    │    G    │                    │    J    │    L    │    U    │    Y    │    ;    │   
+             │    Q    │    W    │    E    │    R    │    T    │                    │    Y    │    U    │    I    │    O    │    P    │   
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │   TAB   │    A    │    R    │    S    │    T    │    D    │                    │    H    │    N    │    E    │    I    │    O    │    "    │
+   │   TAB   │    A    │    S    │    D    │    F    │    G    │                    │    H    │    J    │    K    │    L    │    ;    │    '    │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │   DEL   │    Z    │    X    │    C    │    V    │    B    ││  MUTE  ││PLY/PSE ││    K    │    M    │    ,    │    .    │    /    │    \    │
+   │   CTRL  │    Z    │    X    │    C    │    V    │    B    ││  MUTE  ││PLY/PSE ││    N    │    M    │    ,    │    .    │    /    │  SHIFT  │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │  CTRL   │  LOWER  │  SPACE  │   ALT   ││ CMD/WIN │  ENTER  │  RAISE  │  BSPCE  │  
+                                 │   DEL   │   GUI   │  LOWER  │  RAISE  ││  ENTER  │  SPACE  │   ESC   │  RALT   │  
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
               &kp Q     &kp W     &kp E     &kp R     &kp T                          &kp Y     &kp U     &kp I     &kp O     &kp P   
     &kp TAB   &kp A     &kp S     &kp D     &kp F     &kp G                          &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-    &kp DEL   &kp Z     &kp X     &kp C     &kp V     &kp B     &trans     &trans    &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp BSLH
-                                  &kp LCTRL &mo LOWER &kp SPACE &kp LALT   &kp LGUI  &kp RET   &mo RAISE &kp BSPC    
+    &kp LCTRL &kp Z     &kp X     &kp C     &kp V     &kp B     &trans     &trans    &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
+                                  &kp ESC   &kp LGUI  &sl LOWER &mo RAISE  &kp RET   &kp SPACE &kp BSPC  &kp RALT    
                         >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
@@ -96,10 +99,10 @@ label= "LOWER"                                                 ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-    &ext_power EP_TOG   &trans    &kp UP    &trans    &kp LBRC                       &kp RBRC  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_PLUS
-    &trans    &trans    &kp LEFT  &kp DOWN  &kp RIGHT &kp LBKT                       &kp RBKT  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MINUS &trans
-    &trans    &trans    &kp PG_UP &kp CAPS  &kp PG_DN &kp LPAR  &trans     &trans    &kp RPAR  &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_MULTIPLY &trans
-                                  &trans    &trans    &trans    &trans     &trans    &kp DELETE &kp KP_N0 &trans  
+              &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                         &kp N6    &kp N7    &kp N8    &kp N9    &kp N0     
+    &kp GRAVE &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                      &kp CARET &kp AMPS  &kp KPMUL &kp LPAR  &kp RPAR  &kp MINUS
+    &kp TILDE &kp EQUAL &kp MINUS &kp KPPLU &kp LBRC  &kp RBRC  &trans     &trans    &kp LBKT  &kp RBKT  &kp PIPE  &kp COLON &kp BSLH  &kp UNDER 
+                                  &trans    &trans    &trans    &mo ADJUST &trans    &trans     &trans    &trans  
                         >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
@@ -122,10 +125,10 @@ label= "RAISE"                                                 ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &kp RA(U) &trans    &trans     
-    &kp RA(A) &trans    &kp RA(S) &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &kp RA(O) &trans  
-    &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
-                                  &mo ADJUST &trans   &trans    &trans     &trans    &trans    &trans    &trans  
+              &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                          &kp F6    &kp F7    &kp F8    &kp F9    &kp F10    
+    &kp RA(A) &trans    &kp RA(S) &trans    &trans    &trans                          &trans    &trans    &trans    &trans    &kp RA(O) &trans  
+    &trans    &trans    &trans    &trans    &trans    &trans     &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                                  &mo ADJUST &trans   &mo ADJUST &trans     &trans    &trans    &trans    &trans  
                         >;
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
@@ -148,7 +151,7 @@ label= "ADJUST"                                                ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-             &bt BT_CLR &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &bt BT_CLR   
+             &bt BT_CLR &trans    &trans    &trans    &bootloader                    &trans    &trans    &trans    &trans    &bt BT_CLR   
     &trans   &bt BT_NXT &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &bt BT_NXT &trans   &trans 
     &trans   &bt BT_PRV &trans    &trans    &kp KP_N6 &trans    &trans     &trans    &bt BT_PRV &trans   &trans    &trans    &trans    &trans    
                                   &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    
