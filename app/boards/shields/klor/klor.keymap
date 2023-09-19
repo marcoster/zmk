@@ -74,9 +74,9 @@ label= "BASE"                                                  ;
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
               &kp Q     &kp W     &kp E     &kp R     &kp T                          &kp Y     &kp U     &kp I     &kp O     &kp P   
-    &kp TAB   &kp A     &kp S     &kp D     &kp F     &kp G                          &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+    &kp ESC   &kp A     &kp S     &kp D     &kp F     &kp G                          &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
     &kp LCTRL &kp Z     &kp X     &kp C     &kp V     &kp B     &trans     &trans    &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-                                  &kp ESC   &kp LGUI  &sl LOWER &mo RAISE  &kp RET   &kp SPACE &kp BSPC  &kp RALT    
+                                  &kp LSFT  &kp LGUI  &kp ENTER &mo LOWER  &mo RAISE &kp SPACE &kp BSPC  &kp TAB     
                         >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
@@ -125,8 +125,8 @@ label= "RAISE"                                                 ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                          &kp F6    &kp F7    &kp F8    &kp F9    &kp F10    
-    &kp RA(A) &trans    &kp RA(S) &trans    &trans    &trans                          &trans    &trans    &trans    &trans    &kp RA(O) &trans  
+              &kp F1     &kp F2    &kp F3    &kp F4    &kp F5                          &kp F6    &kp F7    &kp F8    &kp F9    &kp F10    
+    &trans    &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)                  &kp LG(N6) &kp LG(N7) &kp LG(N8) &kp LG(N9) &kp LG(N0) &trans
     &trans    &trans    &trans    &trans    &trans    &trans     &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
                                   &mo ADJUST &trans   &mo ADJUST &trans     &trans    &trans    &trans    &trans  
                         >;
