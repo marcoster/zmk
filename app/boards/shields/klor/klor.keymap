@@ -22,12 +22,18 @@
 #define BASE   0
 #define LOWER  1
 #define RAISE  2
-#define ADJUST 3
+#define I3     3
+#define ADJUST 4
 
 #define KPMUL KP_MULTIPLY
 #define KPPLU KP_PLUS
 
 #define LGS(k) LG(LS(k))
+
+    &mt {
+            tapping-term-ms = <400>;
+        };
+
 
 
 / {
@@ -53,8 +59,6 @@
 //            };
 //    };
 
-
-
         keymap {
                 compatible = "zmk,keymap";
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -74,13 +78,13 @@ label= "BASE"                                                  ;
                                  │   DEL   │   GUI   │  LOWER  │  RAISE  ││  ENTER  │  SPACE  │   ESC   │  RALT   │  
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
- //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-    &kp ESC   &kp Q     &kp W     &kp F     &kp P     &kp B                          &kp J     &kp L     &kp U     &kp Y     &kp SEMI  &kp BSPC
-    &kp TAB   &kp A     &kp R     &kp S     &kp T     &kp G                          &kp M     &kp N     &kp E     &kp I     &kp O     &kp SQT
-    &kp LCTRL &kp Z     &kp X     &kp C     &kp D     &kp V     &trans     &trans    &kp K     &kp H     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-                                  &kp LSFT  &kp LGUI  &mo LOWER &mo RAISE  &kp ENTER &kp SPACE &kp BSPC  &kp RALT    
+ //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷       ╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
+    &kp ESC       &kp Q     &kp W     &kp F     &kp P     &kp B                            &kp J     &kp L     &kp U     &kp Y     &kp SEMI  &kp BSPC
+    &mt LSFT TAB  &kp A     &kp R     &kp S     &kp T     &kp G                            &kp M     &kp N     &kp E     &kp I     &kp O     &kp SQT
+    &kp LCTRL     &kp Z     &kp X     &kp C     &kp D     &kp V     &kp C_MUTE   &trans    &kp K     &kp H     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
+                                      &kp TAB   &mo I3    &mo LOWER &mo RAISE    &kp ENTER &kp SPACE &kp LGUI  &kp RALT    
                         >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp A B &inc_dec_kp C D>;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -127,15 +131,41 @@ label= "RAISE"                                                 ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-    &trans    &kp F1      &kp F2      &kp F3      &kp F4      &kp F5                             &kp F6      &kp F7      &kp F8      &kp F9      &kp F10    &kp F11
-    &trans    &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)                         &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0) &kp F12
-    &trans    &kp LGS(N1) &kp LGS(N2) &kp LGS(N3) &kp LGS(N4) &kp LGS(N5) &trans     &trans      &kp LGS(N6) &kp LGS(N7) &kp LGS(N8) &kp LGS(N9) &kp LGS(N0) &trans
+    &trans    &none       &kp UP      &none       &none       &kp F5                             &kp PG_UP   &kp PG_DN   &kp DEL     &kp INS     &kp F10    &kp F11
+    &trans    &kp LEFT    &kp DOWN    &kp RIGHT   &none       &none                              &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp HOME   &kp END
+    &trans    &none       &none       &none       &none       &none       &trans     &trans      &none       &none       &none       &none       &none       &trans
                                       &trans      &trans      &trans      &trans     &mo ADJUST  &trans      &trans      &trans  
                         >;
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+    i3_layer {
+// ┌───────────────────────────────────────────────────────────┐
+label= "I3"                                                 ;
+// └───────────────────────────────────────────────────────────┘
+/*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+             │         │         │         │         │         │                    │         │         │    Ü    │         │         │
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │    Ä    │         │    ß    │         │         │         │                    │         │         │         │         │    Ö    │         │
+   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+   │         │         │         │         │         │         ││        ││        ││         │         │         │         │         │         │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │ ADJUST  │         │         │         ││         │         │         │         │  
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
+ bindings = <
+ //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
+    &trans    &kp F1      &kp F2      &kp F3      &kp F4      &kp F5                                   &kp F6      &kp F7      &kp F8      &kp F9      &kp F10    &kp F11
+    &trans    &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)                               &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0) &kp F12
+    &trans    &kp LGS(N1) &kp LGS(N2) &kp LGS(N3) &kp LGS(N4) &kp LGS(N5) &trans        &trans         &kp LGS(N6) &kp LGS(N7) &kp LGS(N8) &kp LGS(N9) &kp LGS(N0) &trans
+                                      &trans      &trans      &trans      &kp LG(ENTER) &kp LG(SPACE)  &trans      &trans      &trans  
+                        >;
+                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
 
 
                 adjust_layer {
@@ -153,10 +183,10 @@ label= "ADJUST"                                                ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-    &trans   &bt BT_CLR &trans    &trans    &trans    &bootloader                    &trans     &trans    &trans    &trans     &bt BT_CLR &trans
-    &trans   &bt BT_NXT &trans    &trans    &trans    &trans                         &trans     &trans    &trans    &bt BT_NXT &trans     &trans 
-    &trans   &bt BT_PRV &trans    &trans    &trans    &trans    &trans     &trans    &bt BT_PRV &trans    &trans    &trans     &trans     &trans    
-                                  &trans    &trans    &trans    &trans     &trans    &trans     &trans    &trans    
+    &trans   &bt BT_CLR &trans    &trans    &trans    &bootloader                    &kp LG(HOME)  &kp LG(END) &trans    &trans     &bt BT_CLR &trans
+    &trans   &bt BT_NXT &trans    &trans    &trans    &trans                         &trans        &trans      &trans    &bt BT_NXT &trans     &trans 
+    &trans   &bt BT_PRV &trans    &trans    &trans    &trans    &trans     &trans    &bt BT_PRV    &trans      &trans    &trans     &trans     &trans    
+                                  &trans    &trans    &trans    &trans     &trans    &trans        &trans      &trans    
                         >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
